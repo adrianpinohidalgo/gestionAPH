@@ -31,9 +31,10 @@ public class EstudianteController {
 
 			Estudiante estudiante = null;
 			if (rs.next()) {
-				estudiante = new Estudiante(rs.getInt("id"), rs.getString("nombre"), rs.getString("apellido1"),
-						rs.getString("apellido2"), rs.getString("dni"), rs.getString("direccion"),
-						rs.getString("email"), rs.getString("telefono"));
+				estudiante = new Estudiante(rs.getInt("id"), rs.getInt("idTipologiaSexo"), rs.getString("nombre"),
+						rs.getString("apellido1"), rs.getString("apellido2"), rs.getString("dni"),
+						rs.getString("direccion"), rs.getString("email"), rs.getString("telefono"),
+						rs.getString("colorPreferido"), rs.getBytes("imagen"));
 				return estudiante;
 			}
 			rs.close();
@@ -59,9 +60,10 @@ public class EstudianteController {
 
 			Estudiante estudiante = null;
 			if (rs.next()) {
-				estudiante = new Estudiante(rs.getInt("id"), rs.getString("nombre"), rs.getString("apellido1"),
-						rs.getString("apellido2"), rs.getString("dni"), rs.getString("direccion"),
-						rs.getString("email"), rs.getString("telefono"));
+				estudiante = new Estudiante(rs.getInt("id"), rs.getInt("idTipologiaSexo"), rs.getString("nombre"),
+						rs.getString("apellido1"), rs.getString("apellido2"), rs.getString("dni"),
+						rs.getString("direccion"), rs.getString("email"), rs.getString("telefono"),
+						rs.getString("colorPreferido"), rs.getBytes("imagen"));
 				return estudiante;
 			}
 			rs.close();
@@ -88,9 +90,10 @@ public class EstudianteController {
 
 			Estudiante estudiante = null;
 			if (rs.next()) {
-				estudiante = new Estudiante(rs.getInt("id"), rs.getString("nombre"), rs.getString("apellido1"),
-						rs.getString("apellido2"), rs.getString("dni"), rs.getString("direccion"),
-						rs.getString("email"), rs.getString("telefono"));
+				estudiante = new Estudiante(rs.getInt("id"), rs.getInt("idTipologiaSexo"), rs.getString("nombre"),
+						rs.getString("apellido1"), rs.getString("apellido2"), rs.getString("dni"),
+						rs.getString("direccion"), rs.getString("email"), rs.getString("telefono"),
+						rs.getString("colorPreferido"), rs.getBytes("imagen"));
 				return estudiante;
 			}
 			rs.close();
@@ -117,9 +120,10 @@ public class EstudianteController {
 
 			Estudiante estudiante = null;
 			if (rs.next()) {
-				estudiante = new Estudiante(rs.getInt("id"), rs.getString("nombre"), rs.getString("apellido1"),
-						rs.getString("apellido2"), rs.getString("dni"), rs.getString("direccion"),
-						rs.getString("email"), rs.getString("telefono"));
+				estudiante = new Estudiante(rs.getInt("id"), rs.getInt("idTipologiaSexo"), rs.getString("nombre"),
+						rs.getString("apellido1"), rs.getString("apellido2"), rs.getString("dni"),
+						rs.getString("direccion"), rs.getString("email"), rs.getString("telefono"),
+						rs.getString("colorPreferido"), rs.getBytes("imagen"));
 				return estudiante;
 			}
 			rs.close();
@@ -146,9 +150,10 @@ public class EstudianteController {
 
 			Estudiante estudiante = null;
 			if (rs.next()) {
-				estudiante = new Estudiante(rs.getInt("id"), rs.getString("nombre"), rs.getString("apellido1"),
-						rs.getString("apellido2"), rs.getString("dni"), rs.getString("direccion"),
-						rs.getString("email"), rs.getString("telefono"));
+				estudiante = new Estudiante(rs.getInt("id"), rs.getInt("idTipologiaSexo"), rs.getString("nombre"),
+						rs.getString("apellido1"), rs.getString("apellido2"), rs.getString("dni"),
+						rs.getString("direccion"), rs.getString("email"), rs.getString("telefono"),
+						rs.getString("colorPreferido"), rs.getBytes("imagen"));
 				return estudiante;
 			}
 			rs.close();
@@ -173,15 +178,18 @@ public class EstudianteController {
 				int answer = JOptionPane.showConfirmDialog(null, "¿Estás seguro de que quieres guardar el registro?");
 				if (answer == 0) {
 					PreparedStatement ps = conn.prepareStatement(
-							"update centroeducativo.estudiante set nombre=?, apellido1=?, apellido2=?, dni=?, direccion=?, email=?, telefono=? where id=?");
+							"update centroeducativo.estudiante set nombre=?, apellido1=?, apellido2=?, imagen=?, dni=?, direccion=?, email=?, telefono=?, colorPreferido=?, idTipologiaSexo=? where id=?");
 					ps.setString(1, e.getNombre());
 					ps.setString(2, e.getApellido1());
 					ps.setString(3, e.getApellido2());
-					ps.setString(4, e.getDni());
-					ps.setString(5, e.getDireccion());
-					ps.setString(6, e.getEmail());
-					ps.setString(7, e.getTelefono());
-					ps.setInt(8, e.getId());
+					ps.setBytes(4, e.getImagen());
+					ps.setString(5, e.getDni());
+					ps.setString(6, e.getDireccion());
+					ps.setString(7, e.getEmail());
+					ps.setString(8, e.getTelefono());
+					ps.setString(9, e.getColor());
+					ps.setInt(10, e.getIdToplogiaSexo());
+					ps.setInt(11, e.getId());
 
 					int filasAfectadas = ps.executeUpdate();
 					JOptionPane.showMessageDialog(null, "Filas afectadas: " + filasAfectadas);

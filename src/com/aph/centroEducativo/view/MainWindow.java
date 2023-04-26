@@ -1,6 +1,7 @@
 package com.aph.centroEducativo.view;
 
 import java.awt.Color;
+import java.awt.Dimension;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -12,6 +13,7 @@ public class MainWindow extends JFrame {
 	 */
 	public MainWindow() {
 		this.setExtendedState(MAXIMIZED_BOTH);
+		this.setMinimumSize(new Dimension(800, 600));
 
 		JTabbedPane tabbedPane = new JTabbedPane();
 
@@ -29,6 +31,9 @@ public class MainWindow extends JFrame {
 
 		JPanel pnl5 = new JPanel();
 		tabbedPane.add("Valoración Materia", new ValoracionView());
+
+		JPanel pnl6 = new JPanel();
+		tabbedPane.add("Gestión Estudiante", new PanelGestionEstudiante());
 
 		this.setContentPane(tabbedPane);
 	}

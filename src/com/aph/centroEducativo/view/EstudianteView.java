@@ -246,41 +246,42 @@ public class EstudianteView extends JPanel {
 		JButton btnAnteriorReg = new JButton("<");
 		btnAnteriorReg.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Estudiante e0 = new Estudiante(Integer.parseInt(jtfId.getText()), jtfNombre.getText(),
-						jtfApellido1.getText(), jtfApellido2.getText(), jtfDni.getText(), jtfDireccion.getText(),
-						jtfEmail.getText(), jtfTelefono.getText());
-				Estudiante e1 = EstudianteController.previous(e0);
-				if (e1 != null) {
-					jtfId.setText(String.valueOf(e1.getId()));
-					jtfNombre.setText(e1.getNombre());
-					jtfApellido1.setText(e1.getApellido1());
-					jtfApellido2.setText(e1.getApellido2());
-					jtfDni.setText(e1.getDni());
-					jtfDireccion.setText(e1.getDireccion());
-					jtfEmail.setText(e1.getEmail());
-					jtfTelefono.setText(e1.getTelefono());
-				}
+//				Estudiante e0 = new Estudiante(Integer.parseInt(jtfId.getText()), Integer.parseInt(jtfId.getText()),
+//						jtfNombre.getText(), jtfApellido1.getText(), jtfApellido2.getText(), jtfDni.getText(),
+//						jtfDireccion.getText(), jtfEmail.getText(), jtfTelefono.getText());
+//				Estudiante e1 = EstudianteController.previous(e0);
+//				if (e1 != null) {
+//					jtfId.setText(String.valueOf(e1.getId()));
+//					jtfNombre.setText(e1.getNombre());
+//					jtfApellido1.setText(e1.getApellido1());
+//					jtfApellido2.setText(e1.getApellido2());
+//					jtfDni.setText(e1.getDni());
+//					jtfDireccion.setText(e1.getDireccion());
+//					jtfEmail.setText(e1.getEmail());
+//					jtfTelefono.setText(e1.getTelefono());
+//				}
 			}
 		});
 		panel.add(btnAnteriorReg);
 
 		JButton btnSiguienteReg = new JButton(">");
 		btnSiguienteReg.addActionListener(new ActionListener() {
+
 			public void actionPerformed(ActionEvent e) {
-				Estudiante e0 = new Estudiante(Integer.parseInt(jtfId.getText()), jtfNombre.getText(),
-						jtfApellido1.getText(), jtfApellido2.getText(), jtfDni.getText(), jtfDireccion.getText(),
-						jtfEmail.getText(), jtfTelefono.getText());
-				Estudiante e1 = EstudianteController.next(e0);
-				if (e1 != null) {
-					jtfId.setText(String.valueOf(e1.getId()));
-					jtfNombre.setText(e1.getNombre());
-					jtfApellido1.setText(e1.getApellido1());
-					jtfApellido2.setText(e1.getApellido2());
-					jtfDni.setText(e1.getDni());
-					jtfDireccion.setText(e1.getDireccion());
-					jtfEmail.setText(e1.getEmail());
-					jtfTelefono.setText(e1.getTelefono());
-				}
+//				Estudiante e0 = new Estudiante(Integer.parseInt(jtfId.getText()), Integer.parseInt(jtfId.getText()),
+//						jtfNombre.getText(), jtfApellido1.getText(), jtfApellido2.getText(), jtfDni.getText(),
+//						jtfDireccion.getText(), jtfEmail.getText(), jtfTelefono.getText());
+//				Estudiante e1 = EstudianteController.next(e0);
+//				if (e1 != null) {
+//					jtfId.setText(String.valueOf(e1.getId()));
+//					jtfNombre.setText(e1.getNombre());
+//					jtfApellido1.setText(e1.getApellido1());
+//					jtfApellido2.setText(e1.getApellido2());
+//					jtfDni.setText(e1.getDni());
+//					jtfDireccion.setText(e1.getDireccion());
+//					jtfEmail.setText(e1.getEmail());
+//					jtfTelefono.setText(e1.getTelefono());
+//				}
 			}
 		});
 		panel.add(btnSiguienteReg);
@@ -288,16 +289,16 @@ public class EstudianteView extends JPanel {
 		JButton btnUltimoReg = new JButton(">>");
 		btnUltimoReg.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Estudiante e0 = new Estudiante();
-				Estudiante e1 = EstudianteController.findLast();
-				jtfId.setText(String.valueOf(e1.getId()));
-				jtfNombre.setText(e1.getNombre());
-				jtfApellido1.setText(e1.getApellido1());
-				jtfApellido2.setText(e1.getApellido2());
-				jtfDni.setText(e1.getDni());
-				jtfDireccion.setText(e1.getDireccion());
-				jtfEmail.setText(e1.getEmail());
-				jtfTelefono.setText(e1.getTelefono());
+//				Estudiante e0 = new Estudiante();
+//				Estudiante e1 = EstudianteController.findLast();
+//				jtfId.setText(String.valueOf(e1.getId()));
+//				jtfNombre.setText(e1.getNombre());
+//				jtfApellido1.setText(e1.getApellido1());
+//				jtfApellido2.setText(e1.getApellido2());
+//				jtfDni.setText(e1.getDni());
+//				jtfDireccion.setText(e1.getDireccion());
+//				jtfEmail.setText(e1.getEmail());
+//				jtfTelefono.setText(e1.getTelefono());
 			}
 		});
 		panel.add(btnUltimoReg);
@@ -305,10 +306,10 @@ public class EstudianteView extends JPanel {
 		JButton btnGuardarReg = new JButton("Guardar");
 		btnGuardarReg.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Estudiante e0 = new Estudiante(Integer.parseInt(jtfId.getText()), jtfNombre.getText(),
-						jtfApellido1.getText(), jtfApellido2.getText(), jtfDni.getText(), jtfDireccion.getText(),
-						jtfEmail.getText(), jtfTelefono.getText());
-				EstudianteController.update(e0);
+//				Estudiante e0 = new Estudiante(Integer.parseInt(jtfId.getText()), Integer.parseInt(jtfId.getText()),
+//						jtfNombre.getText(), jtfApellido1.getText(), jtfApellido2.getText(), jtfDni.getText(),
+//						jtfDireccion.getText(), jtfEmail.getText(), jtfTelefono.getText());
+//				EstudianteController.update(e0);
 			}
 		});
 		panel.add(btnGuardarReg);
@@ -316,11 +317,11 @@ public class EstudianteView extends JPanel {
 		JButton btnNuevoReg = new JButton("Nuevo");
 		btnNuevoReg.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Estudiante e0 = new Estudiante(Integer.parseInt(jtfId.getText()), jtfNombre.getText(),
-						jtfApellido1.getText(), jtfApellido2.getText(), jtfDni.getText(), jtfDireccion.getText(),
-						jtfEmail.getText(), jtfTelefono.getText());
-				EstudianteController.insert(jtfId, jtfNombre, jtfApellido1, jtfApellido2, jtfDni, jtfDireccion,
-						jtfEmail, jtfTelefono);
+//				Estudiante e0 = new Estudiante(Integer.parseInt(jtfId.getText()), Integer.parseInt(jtfId.getText()),
+//						jtfNombre.getText(), jtfApellido1.getText(), jtfApellido2.getText(), jtfDni.getText(),
+//						jtfDireccion.getText(), jtfEmail.getText(), jtfTelefono.getText());
+//				EstudianteController.insert(jtfId, jtfNombre, jtfApellido1, jtfApellido2, jtfDni, jtfDireccion,
+//						jtfEmail, jtfTelefono);
 			}
 		});
 		panel.add(btnNuevoReg);
@@ -328,11 +329,11 @@ public class EstudianteView extends JPanel {
 		JButton btnEditarReg = new JButton("Eliminar");
 		btnEditarReg.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Estudiante e0 = new Estudiante(Integer.parseInt(jtfId.getText()), jtfNombre.getText(),
-						jtfApellido1.getText(), jtfApellido2.getText(), jtfDni.getText(), jtfDireccion.getText(),
-						jtfEmail.getText(), jtfTelefono.getText());
-				EstudianteController.delete(e0, jtfId, jtfNombre, jtfApellido1, jtfApellido2, jtfDni, jtfDireccion,
-						jtfEmail, jtfTelefono);
+//				Estudiante e0 = new Estudiante(Integer.parseInt(jtfId.getText()), Integer.parseInt(jtfId.getText()),
+//						jtfNombre.getText(), jtfApellido1.getText(), jtfApellido2.getText(), jtfDni.getText(),
+//						jtfDireccion.getText(), jtfEmail.getText(), jtfTelefono.getText());
+//				EstudianteController.delete(e0, jtfId, jtfNombre, jtfApellido1, jtfApellido2, jtfDni, jtfDireccion,
+//						jtfEmail, jtfTelefono);
 			}
 		});
 		panel.add(btnEditarReg);

@@ -1,16 +1,19 @@
 package com.aph.centroEducativo.model;
 
 public class Estudiante {
-	public int id;
-	public String nombre, apellido1, apellido2, dni, direccion, email, telefono;
+	public int id, idToplogiaSexo;
+	public String nombre, apellido1, apellido2, dni, direccion, email, telefono, color;
+	public byte[] imagen;
 
 	public Estudiante() {
 
 	}
 
-	public Estudiante(int id, String nombre, String apellido1, String apellido2, String dni, String direccion,
-			String email, String telefono) {
+	public Estudiante(int id, int idToplogiaSexo, String nombre, String apellido1, String apellido2, String dni,
+			String direccion, String email, String telefono, String color, byte[] imagen) {
+		super();
 		this.id = id;
+		this.idToplogiaSexo = idToplogiaSexo;
 		this.nombre = nombre;
 		this.apellido1 = apellido1;
 		this.apellido2 = apellido2;
@@ -18,6 +21,8 @@ public class Estudiante {
 		this.direccion = direccion;
 		this.email = email;
 		this.telefono = telefono;
+		this.color = color;
+		this.imagen = imagen;
 	}
 
 	public int getId() {
@@ -26,6 +31,14 @@ public class Estudiante {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public int getIdToplogiaSexo() {
+		return idToplogiaSexo;
+	}
+
+	public void setIdToplogiaSexo(int idToplogiaSexo) {
+		this.idToplogiaSexo = idToplogiaSexo;
 	}
 
 	public String getNombre() {
@@ -84,13 +97,27 @@ public class Estudiante {
 		this.telefono = telefono;
 	}
 
+	public byte[] getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(byte[] imagen) {
+		this.imagen = imagen;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
 	@Override
 	public String toString() {
-//		return "Estudiante [id=" + id + ", nombre=" + nombre + ", apellido1=" + apellido1 + ", apellido2=" + apellido2
-//				+ ", dni=" + dni + ", direccion=" + direccion + ", email=" + email + ", telefono=" + telefono + "]";
-		return nombre + " " + apellido1 + " " + apellido2;
+		return "Estudiante [id=" + id + ", idToplogiaSexo=" + idToplogiaSexo + ", nombre=" + nombre + ", apellido1="
+				+ apellido1 + ", apellido2=" + apellido2 + ", dni=" + dni + ", direccion=" + direccion + ", email="
+				+ email + ", telefono=" + telefono + "]";
 	}
-	
-	
 
 }
